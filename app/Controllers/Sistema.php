@@ -1,72 +1,96 @@
-
 <?php 
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\SistemaModel;
 
-class Sistema extends BaseController{
-    protected $sistema;
+class Rol extends BaseController{
     protected $reglas;
 
-    public function __construct(){
-     $this->sistema=new SistemaModel();
-     helper(['form']);
-     $this->reglas=['nombre'=>['rules'=>'required','errors'=>['required'=>'El campo {field} es obligatorio.'
-     ]
- ]
+    public function __construct()
+    {
 
- ];
+        $this->aux_sistema = new SistemaModel();
+    
     }
-    public function index($estado=1){
+    public function index($estado = 1)
+    {
 
-        $consulta=$this->sistema->where('estado',$estado)->findAll();
-         $matriz=['titulo'=>'Sistema','datos'=>$consulta];
-         echo view('layout/header');
-         echo view ('sistema/inicio',$matriz);
-         echo view('layout/footer');
+        $consulta = $this->aux_sistema->where('estado', $estado,)->findAll();
+        $matriz = [
+            'titulo' => ' Sistema',
+            'datos' => $consulta,
 
-    }
-    public function agregar(){
-
-        $matriz=['titulo'=>'Agregar Sistema'];
+        ];
         echo view('layout/header');
-        echo view('sistema/agregar',$matriz);
+        echo view('sistema/inicio', $matriz);
         echo view('layout/footer');
     }
-    public function insertar(){
-        $this->sistema->save(['nombre'=>$this->request->getPost('nombre'),'nom_creador'=>$this->request->getPost('nom_creador')]);
-        return  redirect()->to(base_url().'/sistema');
-    }
-    public function editar($id){
-       $consulta=$this->sistema->where('id',$id)->first();
-    
-        $matriz=['titulo'=>'Editar Sistema','datos'=>$consulta];
+    public  function agregar()
+    {
+
+        $datos = ['titulo' => 'Agregar Sistema'];
         echo view('layout/header');
-        echo view('sistema/editar',$matriz);
+        echo view('sistema/agregar', $datos);
         echo view('layout/footer');
-    
     }
-    public function actualizar(){
-        $this->sistema->update($this->request->getPost('id'),['nombre'=>$this->request->getPost('n'),'nom_creador'=>$this->request->getPost('nom_creador')]);
-        return  redirect()->to(base_url().'/sistema');
+    public function insertar()
+    {
+        if ($this->request->getMethod() == "post" && $this->validate($this->reglas)) {
+
+            $this->aux_sistema->save(['nombre' => $this->request->getPost('nombre'), 'nombre_creador' => $this->request->getPost('nombre_creador')]);
+            return  redirect()->to(base_url() . '/sistema');
+        } else {
+            $datos = [
+                'datos' => 'Agregar Sistema', 'validation' => $this->validator
+            ];
+            echo view('layout/header');
+            echo view('sistema/agregar', $datos);
+            echo view('layout/footer');
+        }
     }
-    public function eliminar($id){
-        $this->sistema->update($id,['estado'=>0]);
-        return  redirect()->to(base_url().'/sistema');
-    
+    public function editar($id, $valid = null)
+    {
+        $consulta = $this->aux_sistema->where('id', $id)->first();
+        if ($valid != null) {
+            $datos = [
+                'titulo' => 'Editar Sistema',
+                'datos' => $consulta
+            ];
+        } else {
+            $datos = ['titulo' => 'Editar Sistema', 'datos' => $consulta];
+        }
+        echo view('layout/header');
+        echo view('sistema/editar', $datos);
+        echo view('layout/footer');
     }
-    public function eliminados($estado=0){
-        $consulta=$this->sistema->where('estado',$estado)->findAll();
-       $matriz=['titulo'=>'Eliminados','datos'=>$consulta];
-       echo view('layout/header');
-       echo view('sistema/eliminados',$matriz);
-       echo view('layout/footer');
+    public function actualizar()
+    {
+        if ($this->request->getMethod() == "post" && $this->validate($this->reglas)) {
+
+            $this->aux_sistema->update($this->request->getPost('id'), ['nombre' => $this->request->getPost('nombre'), 'nombre_creador' => $this->request->getPost('nombre_creador')]);
+            return  redirect()->to(base_url() . '/sistema');
+        } else {
+            return $this->editar($this->request->getPost('id'), $this->validator);
+        }
     }
-    public function activar($id){
-    
-        $this->sistema->update($id,['estado'=>1]);
-        return  redirect()->to(base_url().'/sistema');
-    
+    public function eliminar($id)
+    {
+        $this->aux_sistema->update($id, ['estado' => 0]);
+        return  redirect()->to(base_url() . '/sistema');
+    }
+    public function eliminados($estado = 0)
+    {
+        $consulta = $this->aux_sistema->where('estado', $estado)->findAll();
+        $datos = ['titulo' => 'Eliminados', 'datos' => $consulta];
+        echo view('layout/header');
+        echo view('sistema/eliminados', $datos);
+        echo view('layout/footer');
+    }
+    public function activar($id)
+    {
+
+        $this->aux_sistema->update($id, ['estado' => 1]);
+        return  redirect()->to(base_url() . '/sistema');
     }
 }

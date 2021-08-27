@@ -13,7 +13,7 @@ class SistemaModel
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nombre','nom_creador','estado'.'usuario'];
+    protected $allowedFields = ['nombre','nombre_creador','logo','usuario','estado'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'fec_insercion';

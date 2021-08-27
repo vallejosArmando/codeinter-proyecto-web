@@ -26,7 +26,7 @@
                   </tr>
                   </thead>
                   <tbody>
-    <?php  foreach ($datos as $data):?>
+    <?php  foreach ($datos as $data ) :?>
 
 
     <tr>

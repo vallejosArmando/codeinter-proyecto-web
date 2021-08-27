@@ -6,7 +6,7 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Argregar<small>Sistemas Area</small></h3>
+                <h3 class="card-title">Argregar<small><?php echo $titulo ?></small></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
