@@ -19,8 +19,8 @@ class Usurol extends BaseController{
         $this->aux_usuario=new UsuarioModel();
 
         helper(['form']);
-        $this->reglas=['id'=>[
-            'rules'=>'required|is_unique[usurol.id]',
+        $this->reglas=['id_rol'=>[
+            'rules'=>'required|is_unique[usurol.id_rol]',
         'errors'=>[
             'required'=>'El campo {field} es obligatorio.',
             'is_unique'=>'El campo {field} ya existe y es unico.',
@@ -30,21 +30,18 @@ class Usurol extends BaseController{
     'id_usuario'=>['rules'=>'required','errors'=>[
         'required'=>'el campo {field} es obligatorio.'
     ]
-    ],
-    'id_rol'=>['rules'=>'required','errors'=>[
-        'required'=>'el campo {field} es obligatorio.'
-
     ]
-]
+ 
   
     ];
     }
     public function index($estado=1){
-
-   $consulta=$this->aux_usurol->where('estado',$estado)->findAll();
+    
+   $consulta=$this->aux_usurol->where('estado',$estado,)->findAll();
    $matriz=[
        'titulo'=>' Usuario Roles',
-       'datos'=>$consulta
+       'datos'=>$consulta,
+    
     ];
    echo view('layout/header');
    echo view('usurol/inicio',$matriz);
@@ -64,12 +61,12 @@ class Usurol extends BaseController{
  
  }
  public function insertar(){
-if($this->request->getVar() =="post"  && $this->validate($this->reglas)){
+if($this->request->getMethod()=="post"  && $this->validate($this->reglas)){
     $this->aux_usurol->save([
         'estado'=>1,
         'usuario'=>1,
         'id_rol'=>$this->request->getPost('id_rol'),
-        'id_usuario'=>$this->request->getPost('id_usuario'),
+        'id_usuario'=>$this->request->getPost('id_usuario')
        
      
 
@@ -113,6 +110,7 @@ public function actualizar(){
          
     
         ]);
+        
         return  redirect()->to(base_url().'/usurol');
     }else{
         return $this->editar($this->request->getPost('id'),$this->validator );

@@ -8,7 +8,7 @@
       </div>
       <div class="card-header">
 
-      <td> <a href="<?php echo base_url()?>/grupos/agregar" class="btn btn-primary" >Agregar</a> </td>
+      <td> <a href="<?php echo base_url()?>/grupo/agregar" class="btn btn-primary" >Agregar</a> </td>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -23,12 +23,13 @@
           </tr>
           </thead>
           <tbody>
-<?php  foreach ($datos['grupos']as $data):?>
+<?php  foreach ($grupo as $data):?>
 <tr>
-<td><?php echo $data->id?></td>
-<td><?php echo $data->grupo?></td>
-<td> <a href="<?php echo base_url(); ?>/grupos/editar/<?php echo $data->id;?>" class="btn btn-success "><i class="nav-icon fas fa-edit"></i></a></td>
-<td> <a href="<?php echo base_url(); ?>/grupos/borrar/<?php echo $data->id;?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+<td><?php echo $data['id']?></td>
+<td><?php echo $data['icono']?></td>
+<td><?php echo $data['grupo']?></td>
+<td> <a href="<?php echo base_url(); ?>/grupo/editar/<?php echo $data['id'];?>" class="btn btn-success "><i class="nav-icon fas fa-edit"></i></a></td>
+<td> <a href="<?php echo base_url(); ?>/grupo/eliminar/<?php echo $data['id'];?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
 </tr>
 <?php endforeach;?>
 

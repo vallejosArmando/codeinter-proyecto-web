@@ -12,7 +12,7 @@
 <?php } ?>
       <form action="<?= base_url();?>/usurol/actualizar" 
       id="formulario_area" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="id" value="<?=$datos['id']; ?>">
+      <input type="hidden" name="id" value="<?=$datos['nom_usuario']; ?>">
         <div class="card-body">
           <div class="row">
 
@@ -24,7 +24,7 @@
                   <option selected="selected" >Rol</option>
                   <?php foreach ($roles as $rol):?> 
 
-<option value="<?php echo $rol['id'] ?>" ><?php echo $rol['id']?></option>
+<option value="<?php echo $rol['id'] ?>" ><?php echo $rol['rol']?></option>
 <?php endforeach; ?>
                 </select>
               </div>
@@ -41,7 +41,7 @@
                   <option selected="selected" >Usuario</option>
                   <?php foreach ($usuarios as $usuario):?> 
 
-<option value="<?php echo $usuario['id'] ?>" ><?php echo $usuario['id']?></option>
+<option value="<?php echo $usuario['id'] ?>" ><?php echo $usuario['nom_usuario']?></option>
 <?php endforeach; ?>
                 </select>
               </div>

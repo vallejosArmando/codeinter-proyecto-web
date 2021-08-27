@@ -10,7 +10,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form  action="<?php echo base_url() ?>/grupos/agregar" id="formulario_grupos" method="POST" enctype="multipart/form-data" >
+              <form  action="<?php echo base_url() ?>/grupo/insertar" id="formulario_grupos" method="POST" enctype="multipart/form-data" >
                 <div class="card-body">
                   <div class="form-group">
                     <label for="grupo">Nombre</label>
@@ -25,7 +25,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Agregar</button>
-                  <a href="<?php echo base_url()?>/grupos" class="btn btn-dark ">Cancelar</a> 
+                  <a href="<?php echo base_url()?>/grupo" class="btn btn-dark ">Cancelar</a> 
 
                 </div>
               </form>

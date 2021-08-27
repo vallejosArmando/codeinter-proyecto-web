@@ -10,7 +10,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form  action="<?php echo base_url() ?>/grupos/borrar/<?php echo $datos['id'];?>" id="formulario_grupos" method="POST" enctype="multipart/form-data" >
+              <form  action="<?php echo base_url() ?>/grupo/borrar/<?php echo $datos['id'];?>" id="formulario_grupos" method="POST" enctype="multipart/form-data" >
                 <div class="card-body">
                   <div class="form-group">
                     <label for="grupo">Nombre</label>
@@ -24,7 +24,7 @@
                 <div class="card-footer">
 
                 <input type="submit" class="btn btn-danger" value="Eliminar">
-                <a href="<?php echo base_url()?>/grupos" class="btn btn-dark ">Cancelar</a> 
+                <a href="<?php echo base_url()?>/grupo" class="btn btn-dark ">Cancelar</a> 
 
                 </div>
               </form>
