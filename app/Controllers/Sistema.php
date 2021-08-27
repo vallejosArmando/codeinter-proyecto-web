@@ -1,17 +1,32 @@
-<?php 
+
+<?php
+
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\SistemaModel;
 
-class Rol extends BaseController{
+class Sistema extends BaseController{
+    protected $aux_sistema;
     protected $reglas;
 
     public function __construct()
     {
 
         $this->aux_sistema = new SistemaModel();
-    
+        helper(['form']);
+        $this->reglas=['nombre_creador'=>[
+            'rules'=>'required|is_unique[sistema_reclamo.nombre]','errors'=>[
+                'required'=>'El campo {field} es obligatorio.',
+                'is_unique'=>'El campo {field} deve ser unico'
+        ]
+    ],
+    'nombre'=>['rules'=>'required','errors'=>[
+        'required'=>'el campo {field} es obligatorio.'
+    ]
+    ],
+ ,
+    ];
     }
     public function index($estado = 1)
     {
