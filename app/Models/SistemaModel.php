@@ -13,11 +13,11 @@ class SistemaModel
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nombre','nom_creador','activo'];
+    protected $allowedFields = ['nombre','nom_creador','estado'.'usuario'];
 
     protected $useTimestamps = true;
-    protected $createdField  = 'fech_insercion';
-    protected $updatedField  = 'fech_modificacion';
+    protected $createdField  = 'fec_insercion';
+    protected $updatedField  = 'fec_modificacion';
     protected $deletedField  = 'deleted_at';
 
     protected $validationRules    = [];

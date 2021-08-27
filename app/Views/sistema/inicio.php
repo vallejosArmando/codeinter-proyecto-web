@@ -5,11 +5,11 @@
         <div class="card">
           
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title"><?php echo $titulo ?></h3>
               </div>
               <div class="card-header">
 
-              <td> <a href="<?php echo base_url()?>/sistemas/insertar" class="btn btn-primary" >Agregar</a> </td>
+              <td> <a href="<?php echo base_url()?>/sistema/insertar" class="btn btn-primary" >Agregar</a> </td>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -26,16 +26,16 @@
                   </tr>
                   </thead>
                   <tbody>
-    <?php  foreach ($datos['sistemas']as $data):?>
+    <?php  foreach ($datos as $data):?>
 
 
     <tr>
-        <td><?php echo $data->id?></td>
-        <td><?php echo $data->nombre?></td>
-        <td><?php echo $data->nombre_creador?></td>
-        <td><?php echo $data->logo?></td>
-        <td> <a href="<?php echo base_url(); ?>/sistemas/editar/<?php echo $data->id;?>" class="btn btn-success "> <i class="nav-icon fas fa-edit"></i></a></td>
-        <td> <a href="<?php echo base_url(); ?>/sistemas/borrar/<?php echo $data->id;?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+        <td><?php echo $data['id']?></td>
+        <td><?php echo $data['nombre']?></td>
+        <td><?php echo $data['nombre_creador']?></td>
+        <td><?php echo $data['logo']?></td>
+        <td> <a href="<?php echo base_url(); ?>/sistema/editar/<?php echo $data['id'];?>" class="btn btn-success "> <i class="nav-icon fas fa-edit"></i></a></td>
+        <td> <a href="<?php echo base_url(); ?>/sistema/eliminar/<?php echo $data['id'];?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
     </tr>
     <?php endforeach;?>
     
