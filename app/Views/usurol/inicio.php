@@ -23,27 +23,27 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($datos as $data) {?>
+                <?php foreach ($datos as $data) :?>
                
 
 
 
                     <tr>
                         <td><?php echo $data['id']; ?></td>
-                        <td><?php echo $data['id_usuario' ]; ?></td>
-                        <td><?php echo $data['id_rol']; ?></td>
+                        <td><?php echo $data['nom_usuario' ]; ?></td>
+                        <td><?php echo $data['rol']; ?></td>
 
                         <td> <a href="<?= base_url('/usurol/editar/'.$data['id']); ?>" class="btn btn-success "> <i class="nav-icon fas fa-edit"></i></a></td>
 <td> 	<a href="#" data-href="<?php echo base_url().'/usurol/eliminar/'.$data['id']; ?>" data-toggle="modal" data-target="#confirm-delete" data-placement="top" title="Eliminar registro" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
-                <?php }?>
+                <?php endforeach; ?>
 
             </tbody>
             <tfoot>
                 <tr>
                     <th>ID</th>
-                    <th>id_usuario</th>
-                    <th>id_rol</th>
+                    <th>Usuario</th>
+                    <th>Rol</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>

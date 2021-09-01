@@ -24,4 +24,20 @@ class UsurolModel
     ];
     protected $validationMessages = [];
     protected $skipValidation     = false;
+
+
+  
+    public function listar()
+    {
+        $builder = $this->builder($this->table);
+
+        $builder = $builder->where('usurol.estado', 1);
+        $builder = $builder->join('rol', 'usurol.id_rol = rol.id');
+        $builder = $builder->join('usuario', 'usurol.id_usuario = usuario.id');
+        $builder = $builder->select('usuario.nom_usuario, rol.rol, usurol.id_usuario,usurol.id_rol, usurol.*');
+
+        $builder = $builder->get();
+        return $builder->getResultArray();
+    }
+
 }

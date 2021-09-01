@@ -16,6 +16,7 @@
           <thead>
           <tr>
             <th>ID</th>
+            <th>Icono</th>
             <th>Grupo</th>
             <th>Editar</th>
             <th>Eliminar</th>
@@ -37,6 +38,7 @@
           <tfoot>
           <tr>
           <th>ID</th>
+          <th>Icono</th>
             <th>Grupo</th>
             <th>Editar</th>
             <th>Eliminar</th>

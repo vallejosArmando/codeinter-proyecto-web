@@ -12,8 +12,8 @@ class Usuario extends BaseController{
         $this->aux_usuario=new UsuarioModel();
         $this->aux_persona=new PersonaModel();
         helper(['form']);
-        $this->reglas=['nom_usuario'=>[
-            'rules'=>'required|is_unique[usuario.nom_usuario]','errors'=>[
+        $this->reglas=[
+            'nom_usuario'=>['rules'=>'required|is_unique[usuario.nom_usuario]','errors'=>[
                 'required'=>'El campo {field} es obligatorio.',
                 'is_unique'=>'El campo {field} deve ser unico'
         ]

@@ -12,3 +12,7 @@
     </h2>
 </body>
 </html>
+<?php if(session()->getFlashdata('message')){
+  echo "<h5>".session()->getFlashdata('message')."</h5>";
+} ?>
+    

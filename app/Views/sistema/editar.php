@@ -1,45 +1,35 @@
+<?=$header; ?>
+<br>
+<h1>Formlario del Sistema</h1>
 
-<div class="row">
-          <!-- left column -->
-          <div class="col-md-12">
-            <!-- jquery validation -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Editar<small>Editar Sitema</small></h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form  action="<?php echo base_url() ?>/sistema/editar/<?php echo $datos['id'];?>" id="formulario_sistema" method="POST" enctype="multipart/form-data" >
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $datos['nombre'];?>" placeholder="Ingrese nombre ">
-                  </div>
-                  <div class="form-group">
-                    <label for="nombre_creador">Nombre del Creador</label>
-                    <input type="text" name="nombre_creador" class="form-control" id="nombre_creador" value="<?php echo $datos['nombre_creador'];?>" placeholder="nombre_creador">
-                  </div>
-                  <div class="form-group">
-                    <label for="logo">Logo del Sistema</label>
-                    <input type="text" name="logo" class="form-control" id="logo" value="<?php echo $datos['logo'];?>" placeholder="Logo">
-                  </div>
-                  
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
+<div class="card" >
+<div class="card-body ">
+<h5>Editar datos del Sistema:</h5>
 
-                <input type="submit" class="btn btn-primary" value="editar">
-                <a href="<?php echo base_url()?>/sistema" class="btn btn-dark ">Cancelar</a> 
+<p class="card-text">
 
-                </div>
-              </form>
-            </div>
-            <!-- /.card -->
-            </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-6">
-
-          </div>
-          <!--/.col (right) -->
-        </div>
+<form method="post" action="<?= base_url('/actualizar') ?>" enctype="multipart/form-data" >
+<input type="hidden" name="id" Value="<?=$sistema['id']?>" >
+  <div class="form-group">
+    <label for="nombre">Nombre del sistema</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" value="<?=$sistema['nombre']?>" >
+  </div>
+  <div class="form-group">
+    <label for="nombre_creador">Nombre del creador del sistema:</label>
+    <input type="text" class="form-control" name ="nombre_creador" id="nombre_creador" Value="<?=$sistema['nombre_creador']?>">
+  </div>
+  <div class="form-group">
+    <label for="logo">Logo del sistema:</label>
+    <br>
+    <img  class="img-thumbnail" src=" <?= base_url()?>/fotos/<?= $sistema['logo'];  ?> " alt="" width="60">
+    <br>
+    <input type="file" class="form-control-file" name ="logo" id="logo" >
+  </div>
+  <br>
+  <button type="submit"class="btn btn-success " >Guardar</button>
+<a href=" <?= base_url('/listar'); ?> " class="btn btn-info" >Canselar</a>
+</form>
+</p>
+</div>
+</div>
+<?=$footer; ?>

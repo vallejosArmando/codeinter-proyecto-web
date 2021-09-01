@@ -2,16 +2,18 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+
 use App\Models\UsuarioModel;
 use App\Models\RolModel;
 use App\Models\UsurolModel;
 
 
 class Usurol extends BaseController{
+    private $model;
+
     protected $aux_usuario;
     protected $aux_usurol;
     protected $aux_rol;
-
     protected $reglas;
     public function __construct(){
         $this->aux_rol=new RolModel();
@@ -35,20 +37,21 @@ class Usurol extends BaseController{
   
     ];
     }
-    public function index($estado=1){
-    
-   $consulta=$this->aux_usurol->where('estado',$estado,)->findAll();
-   $matriz=[
-       'titulo'=>' Usuario Roles',
-       'datos'=>$consulta,
-    
-    ];
-   echo view('layout/header');
-   echo view('usurol/inicio',$matriz);
-   echo view('layout/footer');
 
 
+  
+    public function index()
+    {
+        $consultas = $this->aux_usurol->listar();
+        $matriz=[
+            'datos' => $consultas,
+            'titulo'=>'Tabla Usuario Roles'
+        ];
+        echo view('layout/header');
+        echo view('usurol/inicio',$matriz);
+        echo view('layout/footer');
     }
+
  public function nuevo(){
     $usuarios=$this->aux_usuario->where('estado',1)->findAll();
 
@@ -91,7 +94,7 @@ public function editar($id,$valid=null){
 
     if($valid!=null){
         $matriz=['titulo'=>'Editar Usuario Rol','datos'=>$consulta,'usuarios'=>$usuarios,'roles'=>$roles,'validation'=>$valid];
-        $matriz=['titulo'=>'Editar usuario rol','usuarios'=>$usuarios,'roles'=>$roles,'datos'=>$consulta,'validation'=>$valid];
+ 
 
 
     } else{

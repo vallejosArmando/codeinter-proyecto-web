@@ -13,7 +13,7 @@ class PersonaModel
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['ci', 'nombres','ap','am','direccion','telefono','genero','activo'];
+    protected $allowedFields = ['ci', 'nombres','ap','am','direccion','telefono','id_sistema','genero','usuario','estado'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'fec_insercion';

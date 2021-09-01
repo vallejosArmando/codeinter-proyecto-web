@@ -51,3 +51,16 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+//$routes->get('listar', 'Sistema::index');
+//$routes->get('agregar', 'Sistema::agregar');
+//$routes->post('guardar', 'Sistema::guardar');
+//$routes->get('borrar/(:num)', 'Sistema::borrar/$1');
+//$routes->get('editar/(:num)', 'Sistema::editar/$1');
+//$routes->post('actualizar', 'Sistema::actualizar');
+//
+//$routes->get('inicio', 'Usuario::index');
+//$routes->get('agregar', 'Usuario::agregar');
+//$routes->post('insertar', 'Usuario::insertar');
+//$routes->get('eliminar/(:num)', 'eliminar/$1');
+//$routes->get('editar/(:num)', 'Usuario::editar/$1');
+//$routes->post('actualizar', 'Usuario::actualizar');

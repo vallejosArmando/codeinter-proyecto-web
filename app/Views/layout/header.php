@@ -240,9 +240,9 @@
                 </a>
               </li>
               <li class="nav-item">
-              <a href="<?php echo base_url()?>/sistema" class="nav-link">
+              <a href="<?php echo base_url()?>/usuario" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sistema</p>
+                  <p>Usuario</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -258,29 +258,54 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="<?php echo base_url()?>/acceso" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Accesos</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo base_url()?>/opcion" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Opciones</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url()?>/menus" class="nav-link">
+                <a href="<?php echo base_url()?>/grupo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>menus</p>
+                  <p>Grupos</p>
+                </a>
+              </li>
+            
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Parametros
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="<?php echo base_url()?>/grupo" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Menu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
+                <a href="<?php echo base_url()?>/opcion" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
+                  <p>Submenu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/validation.html" class="nav-link">
+                <a href="<?php echo base_url()?>/permiso" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
+                  <p>Permisos</p>
                 </a>
               </li>
+              
             </ul>
           </li>
           <li class="nav-item">
@@ -293,11 +318,24 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="<?php echo base_url()?>/sistema" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sistema</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo base_url()?>/area" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Areas</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>/jefe_area" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jefe de Areas</p>
+                </a>
+              </li>
+            
               <li class="nav-item">
                 <a href="<?php echo base_url()?>/empleado" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -305,30 +343,60 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="<?php echo base_url()?>/asignacion" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Asignaciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo base_url()?>/tipo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tipo de empelados</p>
+                  <p>Tipo de Empleados</p>
                 </a>
               </li>
-            
+             
               <li class="nav-item">
-                <a href="<?php echo base_url()?>/grupo" class="nav-link">
+                <a href="<?php echo base_url()?>/reclamo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Grupos</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url()?>/usuario" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>usuarios</p>
+                  <p>Reclamos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url()?>/acceso" class="nav-link">
+                <a href="<?php echo base_url()?>/reclamo_conf" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>accesos</p>
+                  <p>Reclamos Confirmados</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Reportes
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="<?php echo base_url()?>/rep_p_usuario" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rep. Presona-Usuario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>/rep_p_fecha" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rep. Personas-Fechas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>/rep_area_fecha" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rep. Area-fecha</p>
+                </a>
+              </li>
+              
             </ul>
           </li>
          
@@ -362,4 +430,10 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
- 
+    <?php  if (session('mensaje')){?>
+<div class="alert alert-danger" role="alert">
+  
+  <?php echo session('mensaje'); ?>
+</div>
+
+<?php } ?>

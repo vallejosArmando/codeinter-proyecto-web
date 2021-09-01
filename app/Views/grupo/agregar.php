@@ -10,6 +10,11 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+              <?php if(isset($validation)){ ?>
+<div class="alert alert-danger" >
+<?php echo $validation->listErrors(); ?>
+</div>
+<?php } ?>
               <form  action="<?php echo base_url() ?>/grupo/insertar" id="formulario_grupos" method="POST" enctype="multipart/form-data" >
                 <div class="card-body">
                   <div class="form-group">

@@ -10,9 +10,9 @@ class Grupo extends BaseController{
 
         $this->grupo=new GrupoModel();
         helper(['form']);
-        $this->reglas=['grupo'=>['rules'=>'required','errors'=>['required'=>'El campo {field} es obligatorio.'
-        ]
-    ]
+        $this->reglas=[
+            'icono'=>['rules'=>'required','errors'=>['required'=>'El campo {field} es obligatorio.']],
+            'grupo'=>['rules'=>'required','errors'=>['required'=>'El campo {field} es obligatorio.']],
 
     ];
     }
